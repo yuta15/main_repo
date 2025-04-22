@@ -21,7 +21,7 @@ jobs:
       
       - name: submodule update
         run: |
-          git submodule update
+          git submodule update --init --recursive
 
       - name: run current Dir
         run: |
@@ -32,6 +32,7 @@ jobs:
       - name: run shell
         run: |
           cd submodule_repo
+          pwd
           ls -la
           if [ ! -e test.sh ]; then
               exit 1

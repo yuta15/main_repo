@@ -25,6 +25,9 @@ jobs:
 
       - name: run shell
         run: |
-          cd submodule_repo/ &&\
-          . test.sh
-
+          cd submodule_repo
+          if [! -e test.sh ]; then
+            exit(1)
+          else
+            . test.sh
+          fi

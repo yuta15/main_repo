@@ -18,6 +18,10 @@ jobs:
         with:
           python-version: '3.10'
           architecture: 'x64'
+      
+      - name: submodule update
+        run: |
+          git submodule update
 
       - name: run current Dir
         run: |
@@ -27,8 +31,9 @@ jobs:
         run: |
           cd submodule_repo
           ls -la
-          if [! -e test.sh ]; then
-            exit 1
+          if [ ! -e test.sh ]; then
+              exit 1
           else
-            . test.sh
+              chmod 755 test.sh
+              bash test.sh
           fi

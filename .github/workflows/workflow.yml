@@ -19,13 +19,6 @@ jobs:
           python-version: '3.10'
           architecture: 'x64'
 
-      - name: submodule update
-        run: |
-          git submodule update\
-          && git add . \
-          && git commit -m 'submodule update'\
-          && git push origin main
-
       - name: run current Dir
         run: |
           ls && pwd

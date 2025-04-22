@@ -1,7 +1,7 @@
 name: Run test when pushed code
 run-name: ${{ github.actor }} is pushed!!!!!!
 
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
   run-shell:

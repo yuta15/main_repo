@@ -26,6 +26,8 @@ jobs:
       - name: run current Dir
         run: |
           ls && pwd
+          cd submodule_repo
+          ls -la
 
       - name: run shell
         run: |

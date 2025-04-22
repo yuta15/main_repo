@@ -25,6 +25,6 @@ jobs:
 
       - name: run shell
         run: |
-          cd submodule_app/ &&\
+          cd submodule_repo/ &&\
           . test.sh
 

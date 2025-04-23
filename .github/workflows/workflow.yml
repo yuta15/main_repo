@@ -40,3 +40,12 @@ jobs:
               chmod 755 test.sh
               bash test.sh
           fi
+      
+      - name: get pwd
+        run: |
+          echo "current_dir=$(pwd)" >> $GITHUB_ENV
+
+      - uses: actions/upload-artifact@v4
+        with: 
+          name: csv
+          path: "${{ env.current_dir }}/log/test.csv"
